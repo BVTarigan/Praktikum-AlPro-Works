@@ -1,0 +1,112 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void scrollingTiktok(){
+    int mulaiDari, berapa;
+
+    cout << "\n--- 1. SCROLLING TIKTOK ---\n";
+    cout << "Mulai scrolling dari VT ke-: ";
+    cin >> mulaiDari;
+
+    cout << "Mau nonton berapa VT hari ini? ";
+    cin >> berapa;
+
+    cout << "\n[Mulai Scroll Feed...]\n";
+
+    for(int i = mulaiDari; i <= berapa; i++){
+        cout << "VT ke-" << i << endl;
+    }
+
+    cout << "Josjis, waktumu terbuang sia-sia!\n\n";
+}
+
+void stalkingDoi(){
+    int berapa;
+    cout << "\n--- 2. STALKING IG DOI ---\n";
+    cout << "Mau stalk sampai berapa foto jadul? ";
+    cin >> berapa;
+
+    cout << "\n[Mulai Stalking Foto Tahun 2019...]\n";
+    
+    for(int i = 1 ;i <= berapa;i++){
+        char input;
+
+        cout << "Foto ke-" << i << ": Lagi liat-liat... LIKE gak? (y/n): ";
+        cin >> input;
+
+        if(input == 'n'){
+            cout << "Swipe ke foto selanjutnya.\n\n";
+            continue;
+        } else if(input == 'y'){
+            cout << "FOTO KE-" << i << " KEPENCET LIKE! ADUH PANIK!\n";
+            cout << "[BREAK!] Tutup aplikasi, bye world!\nSesi stalking selesai.\n";
+
+            break;
+        }
+        
+    }
+}
+
+void filterKataKata(){
+    char input[100];
+    int berapa;
+
+    cout << "\n--- 3. FILTER KATA-KATA DI X ---\n";
+    cout << "Masukkan 1 kata toxic yang mau di-mute (misal: kasar/drama/politik): ";
+    cin >> input;
+
+    cout << "Berapa topik yang mau di-scroll di Timeline? ";
+    cin >> berapa;
+
+    cout << "[Mulai Scroll Timeline X....]\n";
+
+    for(int i=1;i<=berapa;i++){
+        char topik[100];
+
+        cout << "Masukkan kata/topik Tweet ke-" << i << ": ";
+        cin >> topik;
+
+        if(topik == input){
+            cout << "[MUTED] Ketemu kata '" << input << "' -> AUTO SKIP! (CONTINUE)\n";
+            continue;
+        }
+
+        cout << "Kata '" << input << "' aman!\n";
+
+        if(i == berapa)
+            cout << "\n\nSelesai scroll X tanpa kena paparan kontek toxic!";
+    }
+}
+
+
+
+int main(){
+    int pilihan;
+    do{
+        cout << "MENU SOSMED GEN Z\n";
+        cout << "1. Scrolling TikTok\n";
+        cout << "2. Stalking IG DOI\n";
+        cout << "3. Filter kata-kata di X\n";
+        cout << "4. Touch Grass (keluar)\n";
+        cout << "Pilih opsi (1-4): ";
+        cin >> pilihan;
+
+        switch(pilihan){
+            case (1):
+                scrollingTiktok();
+                break;
+            case (2):
+                stalkingDoi();
+                break;
+            case (3):
+                filterKataKata();
+                break;
+        }
+
+    } while(pilihan != 4);
+
+    cout << "\n\nAkhirnya 'Touch Grass' juga..!";
+
+    return 1;
+}
